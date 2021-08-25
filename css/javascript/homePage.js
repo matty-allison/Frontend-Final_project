@@ -36,14 +36,6 @@ function filtering() {
   fetch("https://sneakeromatic-api.herokuapp.com/show-sneakers")
   .then((response) => response.json())
   .then((data) => {
-    let sneakers = data.data
-    for (shoe of sneakers) {
-      let brand = shoe[2]
-      console.log(brand)
-      if(brand = "NIKE") {
-        let shoes = document.getElementsByClassName("shoe-card")
-        
-      }
-    }
+    
   })
 }
