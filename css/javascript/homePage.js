@@ -7,11 +7,15 @@ fetch("https://sneakeromatic-api.herokuapp.com/show-sneakers")
     let sneakers = data.data;
     let container = document.querySelector("#sneakers-container");
     sneakers.forEach((shoe) => {
-      container.innerHTML += `<img class="shoe-image" src="${shoe[5]}" alt="The Sneaker">
+      container.innerHTML += `<div class="shoe-card"><img class="shoe-image" src="${shoe[6]}" alt="The Sneaker">
+      <div>
         <h2 class="shoe-head">${shoe[1]}</h2>
         <h3 class="shoe-brand">${shoe[2]}</h3>
-        <p class="shoe-description">${shoe[3]}</p>
-        <h4 class="price">R${shoe[4]}</h4>`;
+        <p class="gender">${shoe[3]}</p>
+        <p class="shoe-description">${shoe[4]}</p>
+        <h4 class="price">R${shoe[5]}</h4>
+        </div>
+        </div>`;
     });
   });
 
@@ -27,6 +31,19 @@ fetch("https://sneakeromatic-api.herokuapp.com/show-reviews/")
     });
   });
 
+
 function filtering() {
-    
+  fetch("https://sneakeromatic-api.herokuapp.com/show-sneakers")
+  .then((response) => response.json())
+  .then((data) => {
+    let sneakers = data.data
+    for (shoe of sneakers) {
+      let brand = shoe[2]
+      console.log(brand)
+      if(brand = "NIKE") {
+        let shoes = document.getElementsByClassName("shoe-card")
+        
+      }
+    }
+  })
 }
