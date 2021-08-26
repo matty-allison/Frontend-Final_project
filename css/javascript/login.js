@@ -2,6 +2,7 @@
 function loginUser() {
     let nameUser = document.getElementById('login-name').value
     let userPassword = document.getElementById('login-password').value
+    // console.log(nameUser, userPassword);
     fetch('https://sneakeromatic-api.herokuapp.com/login/', {
         method: 'PATCH',
         body: JSON.stringify({
@@ -13,7 +14,14 @@ function loginUser() {
         },
     })
     .then((res) => res.json())
-    .then(data => {
-        console.log(data.data)
+    .then(res => {
+        console.log(res.data);
+        if (res.data.length == 0) {
+            alert("Incorrect name or password, please make sure you entered the right info")
+        }
+        else{
+            localStorage.setItem('user', JSON.stringify(res.data));
+            window.location = './index.html'
+        }
     })
 }
