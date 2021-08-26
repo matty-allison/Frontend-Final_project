@@ -15,7 +15,6 @@ function displaySneakers(array) {
       </div>`;
   });
 }
-
 let sneakers = []
 fetch("https://sneakeromatic-api.herokuapp.com/show-sneakers")
   .then((res) => res.json())
