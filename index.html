@@ -9,12 +9,19 @@
   </head>
   <body>
       <div id="filter-buttons">
-          <button onclick="filtering()" class="brand">Nike</button>
-          <button onclick="filtering()" class="brand">Adidas</button>
-          <button onclick="filtering()" class="brand">Vans</button>
+          <button onclick="productFilter('NIKE')" class="brand">Nike</button>
+          <button onclick="productFilter('Adidas')" class="brand">Adidas</button>
+          <button onclick="productFilter('vans')" class="brand">Vans</button>
       </div>
-    <div id="sneakers-container"></div>
+      <button class="login">Login</button>
+      <button class="cart">cart</button>
+    <div id="sneakers-container"></div> 
     <div id="review-container"></div>
+    <form action="">
+      <input type="text" id="reviewName" name="review_name" placeholder="Enter your name..." required>
+      <input type="text" id="review" name="review" placeholder="I love this site?!" required>
+      <button onclick="event.preventDefault(), addReview()" class="reviewbtn">Add</button>
+    </form>
     <script src="css/javascript/homePage.js"></script>
   </body>
 </html>

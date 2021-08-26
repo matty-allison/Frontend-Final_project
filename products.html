@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/productPage.css">
+    <title>Sneakers Page</title>
+</head>
+<body>
+    <div id="gender-container">
+        <button onclick="window.location.reload()" class="genderbtn">All</button>
+        <button onclick="genderFilter('Unisex')" class="genderbtn">Unisex</button>
+        <button onclick="genderFilter('Males')" class="genderbtn">Males</button>
+        <button onclick="genderFilter('Females')" class="genderbtn">Females</button>
+    </div>
+    <div id="filter-buttons">
+        <button onclick="window.location.reload()" class="brand">All</button>
+        <button onclick="productFilter('NIKE')" class="brand">Nike</button>
+        <button onclick="productFilter('ADIDAS')" class="brand">Adidas</button>
+        <button onclick="productFilter('VANS')" class="brand">Vans</button>
+        <button onclick="productFilter('BALENCIAGA')" class="brand">Balenciaga</button>
+        <button onclick="productFilter('CONVERSE')" class="brand">Converse</button>
+        <button onclick="productFilter('PUMA')" class="brand">Puma</button>
+    </div>
+    <input type="text" id="search" placeholder="Search...">
+    <div id="sneaker-container"></div>
+    <script src="./css/javascript/productPage.js"></script>
+</body>
+</html>
