@@ -8,6 +8,11 @@
     <title>Sneakers Page</title>
 </head>
 <body>
+    <div>
+        <a href="./index.html">Home</a>
+        <a href="./login.html">login</a>
+        <a href="./checkout.html">checkout</a>
+    </div>
     <div id="gender-container">
         <button onclick="window.location.reload()" class="genderbtn">All</button>
         <button onclick="genderFilter('Unisex')" class="genderbtn">Unisex</button>
@@ -25,6 +30,19 @@
     </div>
     <input type="text" id="search" placeholder="Search...">
     <div id="sneaker-container"></div>
+    <div class="add-form-container">
+        <h2>Add a sneaker</h2>
+        <form>
+            <input type="text" id="sneaker-name" name="sneaker_name" placeholder="Enter the name..." required>
+            <input type="text" id="sneaker-brand" name="sneaker_brand" placeholder="Enter brand..." required>
+            <input type="text" id="gender" name="gender" placeholder="Enter the gender type..." required>
+            <input type="text" id="sneaker-description" name="sneaker_description" placeholder="Enter a description..." required>
+            <input type="text" id="sneaker-price" name="sneaker_price" placeholder="Enter the price..." required>
+            <input type="file" id="sneaker-image" name="sneaker_image" onchange="imageConverter()" required>
+            <button onclick="event.preventDefault() ,addSneaker()" class="addbtn">Add a sneaker</button>
+        </form>
+    </div>
+    <img src="" alt="" class="imgholder" />
     <script src="./css/javascript/productPage.js"></script>
 </body>
 </html>

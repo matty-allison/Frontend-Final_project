@@ -60,3 +60,11 @@ function addReview(){
   .then(data => {
   })
 }
+
+function displayGreeting() {
+  let user = JSON.parse(localStorage.getItem('user'))
+  console.log(user[0])
+  document.getElementById('usernameDisplay').innerHTML = `Welcome ${user[0].name}`
+}
+
+displayGreeting()
