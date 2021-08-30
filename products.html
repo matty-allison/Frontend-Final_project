@@ -8,10 +8,10 @@
     <title>Sneakers Page</title>
 </head>
 <body>
-    <div>
+    <div class="navSection">
         <a href="./index.html">Home</a>
-        <a href="./login.html">login</a>
-        <a href="./checkout.html">checkout</a>
+        <div class="redirectContainer">
+        </div>
     </div>
     <div id="gender-container">
         <button onclick="window.location.reload()" class="genderbtn">All</button>
@@ -42,6 +42,16 @@
             <button onclick="event.preventDefault() ,addSneaker()" class="addbtn">Add a sneaker</button>
         </form>
     </div>
+    <div class="update-form-container"></div>
+    <h2>Update a sneaker</h2>
+    <form>
+        <input type="text" id="sneakerName" name="sneaker_name" placeholder="Enter the new name..." required>
+        <input type="text" id="sneakerBrand" name="sneaker_brand" placeholder="Enter new brand..." required>
+        <input type="text" id="Gender" name="gender" placeholder="Enter different gender type..." required>
+        <input type="text" id="sneakerDescription" name="sneaker_description" placeholder="Enter a new description..." required>
+        <input type="text" id="sneakerPrice" name="sneaker_price" placeholder="Enter a different price..." required>
+        <input type="file" id="sneakerImage" name="sneaker_image" onchange="imageConverter()" required>
+    </form>
     <img src="" alt="" class="imgholder" />
     <script src="./css/javascript/productPage.js"></script>
 </body>

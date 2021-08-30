@@ -12,9 +12,12 @@ function displaySneakers(array) {
       <p class="shoe-description">${shoe[4]}</p>
       <h4 class="price">R${shoe[5]}</h4>
       </div>
+       <button class="buyBtn">Purchase</button>
       </div>`;
   });
 }
+
+// view products function
 let sneakers = []
 fetch("https://sneakeromatic-api.herokuapp.com/show-sneakers")
   .then((res) => res.json())
@@ -24,6 +27,7 @@ fetch("https://sneakeromatic-api.herokuapp.com/show-sneakers")
     displaySneakers(sneakers.slice(0, 6))
   });
 
+// display reviews function
 fetch("https://sneakeromatic-api.herokuapp.com/show-reviews/")
   .then((res) => res.json())
   .then((data) => {
@@ -36,6 +40,7 @@ fetch("https://sneakeromatic-api.herokuapp.com/show-reviews/")
     });
   });
 
+// filter Products by brand
 function productFilter(category){
   let filtered = sneakers.filter(shoe => {
     return shoe[2].toLowerCase() == category.toLowerCase();
@@ -43,6 +48,7 @@ function productFilter(category){
   displaySneakers(filtered.slice(0, 6));
 }
 
+// add review function
 function addReview(){
   let reviewName = document.getElementById('reviewName').value
   let reviewContent = document.getElementById('review').value
@@ -61,10 +67,33 @@ function addReview(){
   })
 }
 
+// function to greet user
 function displayGreeting() {
   let user = JSON.parse(localStorage.getItem('user'))
-  console.log(user[0])
-  document.getElementById('usernameDisplay').innerHTML = `Welcome ${user[0].name}`
+  // console.log(user[0])
+  if (user == null) {
+    document.getElementById('usernameDisplay').innerHTML = ''
+  }
+  else if (user.name == "Matthew Allison"){
+    document.getElementById('usernameDisplay').innerHTML = `Welcome back Admin`
+  }
+  else{
+    document.getElementById('usernameDisplay').innerHTML = `Welcome ${user.name}`
+  }
 }
 
 displayGreeting()
+
+// function redirect to cart or login
+function redirectUser() {
+  let container = document.querySelector('.redirectContainer')
+  let user = JSON.parse(localStorage.getItem('user'))
+  if(user == null) {
+    container.innerHTML = `<a href="./login.html" class="loginBtn">Login</a>`
+  }
+  else{
+    container.innerHTML = `<a href="./checkout.html" class="cartBtn">Cart</a>`
+  }
+}
+redirectUser()
+
