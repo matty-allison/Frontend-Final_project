@@ -34,7 +34,7 @@ function displaySneakers(array) {
       <p class="shoe-description">${shoe[4]}</p>
       <h4 class="price">R${shoe[5]}</h4>
       </div>
-      <button class="purchaseBtn">Purchase</button>
+      <button onclick="addToCart(${shoe[0]})" class="purchaseBtn">Purchase</button>
       </div>`;
   });
 }
@@ -45,7 +45,7 @@ let sneakers = [];
     .then((res) => res.json())
     .then((data) => {
       let user = JSON.parse(localStorage.getItem('user'))
-      console.log(user)
+      // console.log(user)
       sneakers = data.data;
       if (user == null) {
         displaySneakers(sneakers)
@@ -233,3 +233,20 @@ function redirectUser() {
   }
 }
 redirectUser()
+
+// cart function 
+let cart = []
+function addToCart(sneaker_id) {
+  fetch('https://sneakeromatic-api.herokuapp.com/show-sneakers')
+  .then((res) => res.json())
+  .then(data => {
+    let sneakers = data.data
+    let addSneakerToCart = sneakers.find((shoe) => {
+      return shoe[0] == sneaker_id
+    })
+    cart.push(addSneakerToCart)
+    localStorage.setItem('cart', JSON.stringify(cart))
+    let cartSize = JSON.parse(localStorage.getItem('cart')).length
+    document.querySelector('.itemNumber').innerHTML = cartSize
+  })
+}
