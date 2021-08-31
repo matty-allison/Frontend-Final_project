@@ -12,6 +12,7 @@ function displayAdminSneakers(array) {
         <h3 class="shoe-brand">${shoe[2]}</h3>
         <p class="gender">${shoe[3]}</p>
         <p class="shoe-description">${shoe[4]}</p>
+        <p>Quantity: 1</p>
         <h4 class="price">R${shoe[5]}</h4>
         </div>
         <button onclick="event.preventDefault(), deleteSneaker(${shoe[0]})" class="deletebtn">delete</button>
@@ -32,6 +33,7 @@ function displaySneakers(array) {
       <h3 class="shoe-brand">${shoe[2]}</h3>
       <p class="gender">${shoe[3]}</p>
       <p class="shoe-description">${shoe[4]}</p>
+      <p>Quantity: 1</p>
       <h4 class="price">R${shoe[5]}</h4>
       </div>
       <button onclick="addToCart(${shoe[0]})" class="purchaseBtn">Purchase</button>
@@ -250,13 +252,16 @@ function addToCart(sneaker_id) {
     }
     else{
       cart.push(addSneakerToCart)
+      let totalPrice = cart.reduce((total, c) => total + parseInt(c[5]), 0)
       localStorage.setItem('cart', JSON.stringify(cart))
+      localStorage.setItem('price', JSON.stringify(totalPrice))
       let cartSize = JSON.parse(localStorage.getItem('cart')).length
       document.querySelector('.itemNumber').innerHTML = cartSize
     }
   })
 }
 
+// check the cart if you refresh page
 function checkCart() {
   try{
     let container = document.querySelector('.itemNumber')
