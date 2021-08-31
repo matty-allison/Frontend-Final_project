@@ -240,13 +240,37 @@ function addToCart(sneaker_id) {
   fetch('https://sneakeromatic-api.herokuapp.com/show-sneakers')
   .then((res) => res.json())
   .then(data => {
+    let user = localStorage.getItem('user')
     let sneakers = data.data
     let addSneakerToCart = sneakers.find((shoe) => {
       return shoe[0] == sneaker_id
     })
-    cart.push(addSneakerToCart)
-    localStorage.setItem('cart', JSON.stringify(cart))
-    let cartSize = JSON.parse(localStorage.getItem('cart')).length
-    document.querySelector('.itemNumber').innerHTML = cartSize
+    if (user == null) {
+      window.location = './login.html'
+    }
+    else{
+      cart.push(addSneakerToCart)
+      localStorage.setItem('cart', JSON.stringify(cart))
+      let cartSize = JSON.parse(localStorage.getItem('cart')).length
+      document.querySelector('.itemNumber').innerHTML = cartSize
+    }
   })
 }
+
+function checkCart() {
+  try{
+    let container = document.querySelector('.itemNumber')
+    let itemsInCart = JSON.parse(localStorage.getItem('cart')).length
+    if (itemsInCart == null) {
+      addToCart()
+    }
+    else{
+      container.innerHTML = itemsInCart
+    }
+  }
+  catch(err){
+    console.log('Cart is empty');
+  }
+}
+
+checkCart()

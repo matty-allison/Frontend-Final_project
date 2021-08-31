@@ -12,7 +12,7 @@ function displaySneakers(array) {
       <p class="shoe-description">${shoe[4]}</p>
       <h4 class="price">R${shoe[5]}</h4>
       </div>
-       <button class="buyBtn">Purchase</button>
+      <a href="./products.html">Purchase</a>
       </div>`;
   });
 }
