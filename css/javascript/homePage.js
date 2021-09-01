@@ -98,3 +98,25 @@ function redirectUser() {
 }
 redirectUser()
 
+// logout function
+function switchBtn() {
+  let user = JSON.parse(localStorage.getItem('user'))
+  if (user == null){
+    console.log('user is not logged it');
+  }
+  else{
+    document.querySelector('.logoutbtn-container').innerHTML = `<button onclick="logOutUser()" class="logOutBtn">log out</button>`
+  }
+}
+
+switchBtn()
+
+function logOutUser() {
+  if (confirm('Are you sure you want to log out?')){
+    localStorage.removeItem('user')
+    window.location.reload()
+  }
+  else{
+    console.log('log out cancelled');
+  }
+}

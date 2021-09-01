@@ -43,7 +43,7 @@ function displaySneakers(array) {
 
 // display the Products
 let sneakers = [];
-  fetch("https://sneakeromatic-api.herokuapp.com/show-sneakers")
+  fetch("https://sneakeromatic-api.herokuapp.com/show-sneakers/")
     .then((res) => res.json())
     .then((data) => {
       let user = JSON.parse(localStorage.getItem('user'))
@@ -279,3 +279,26 @@ function checkCart() {
 }
 
 checkCart()
+
+// logout function
+function switchBtn() {
+  let user = JSON.parse(localStorage.getItem('user'))
+  if (user == null){
+    console.log('user is not logged it');
+  }
+  else{
+    document.querySelector('.logoutbtn-container').innerHTML = `<button onclick="logOutUser()" class="logOutBtn">log out</button>`
+  }
+}
+
+switchBtn()
+
+function logOutUser() {
+  if (confirm('Are you sure you want to log out?')){
+    localStorage.removeItem('user')
+    window.location.reload()
+  }
+  else{
+    console.log('log out cancelled');
+  }
+}
