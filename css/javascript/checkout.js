@@ -19,9 +19,14 @@ function displayCart(array) {
 }
 sneakers = JSON.parse(localStorage.getItem('cart'))
 let price = JSON.parse(localStorage.getItem('price'))
-console.log(sneakers);
-displayCart(sneakers)
-document.querySelector('.totalPrice').innerHTML = "R"+price
+
+if (sneakers == null) {
+    document.querySelector('.emptyCart').innerHTML = 'Your cart is empty.'
+}
+else{
+    displayCart(sneakers)
+    document.querySelector('.totalPrice').innerHTML = "R"+price
+}
 
 // remove sneaker from cart
 function removeSneaker(id) {

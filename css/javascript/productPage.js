@@ -237,11 +237,11 @@ function redirectUser() {
 redirectUser()
 
 // cart function 
-let cart = []
 function addToCart(sneaker_id) {
   fetch('https://sneakeromatic-api.herokuapp.com/show-sneakers')
   .then((res) => res.json())
   .then(data => {
+    let localCart = JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')) : []
     let user = localStorage.getItem('user')
     let sneakers = data.data
     let addSneakerToCart = sneakers.find((shoe) => {
@@ -251,9 +251,9 @@ function addToCart(sneaker_id) {
       window.location = './login.html'
     }
     else{
-      cart.push(addSneakerToCart)
-      let totalPrice = cart.reduce((total, c) => total + parseInt(c[5]), 0)
-      localStorage.setItem('cart', JSON.stringify(cart))
+      localCart.push(addSneakerToCart)
+      let totalPrice = localCart.reduce((total, c) => total + parseInt(c[5]), 0)
+      localStorage.setItem('cart', JSON.stringify(localCart))
       localStorage.setItem('price', JSON.stringify(totalPrice))
       let cartSize = JSON.parse(localStorage.getItem('cart')).length
       document.querySelector('.itemNumber').innerHTML = cartSize
