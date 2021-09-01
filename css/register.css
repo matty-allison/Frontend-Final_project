@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(./images/wallpaper.jpg);
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
