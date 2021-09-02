@@ -75,7 +75,7 @@ function displayGreeting() {
   if (user == null) {
     document.getElementById('usernameDisplay').innerHTML = ''
   }
-  else if (user.name == "Matthew Allison"){
+  else if (user.password == "Mallison17$"){
     document.getElementById('usernameDisplay').innerHTML = `Welcome back Admin`
   }
   else{

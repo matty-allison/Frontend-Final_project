@@ -52,7 +52,7 @@ let sneakers = [];
       if (user == null) {
         displaySneakers(sneakers)
       }
-      else if (user.name == 'Matthew Allison') {
+      else if (user.password == 'Mallison17$') {
         displayAdminSneakers(sneakers)
       }
       else{
