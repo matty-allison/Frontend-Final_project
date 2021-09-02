@@ -11,16 +11,17 @@
     <title>Register</title>
 </head>
 <body>
+    <a class="homeBtn" href="./index.html">home</a>
     <div class="form-container">
         <h2>Register</h2>
         <form class="form">
             <input type="text" id="name" name="name" placeholder="Enter your full name..." required>
             <input type="text" id="email" name="email" placeholder="Enter your email..." required>
             <input type="password" id="password" name="password" placeholder="Enter a password..." required>
-            <button onclick="event.preventDefault(), registerUser()">Register</button>
+            <button class="registerBtn" onclick="event.preventDefault(), registerUser()">Register</button>
         </form>
     </div>
-    <a href="./login.html">Already registered?</a>
+    <a class="loginBtn" href="./login.html">Already registered?</a>
     <script src="./css/javascript/register.js"></script>
 </body>
 </html>
