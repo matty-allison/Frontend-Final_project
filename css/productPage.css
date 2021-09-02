@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     font-size: 90%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(./images/login\ wallpaper.jpg);
 }
 
 .shoe-image{

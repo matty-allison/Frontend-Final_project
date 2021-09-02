@@ -5,13 +5,6 @@ function displaySneakers(array) {
   array.forEach((shoe) => {
     container.innerHTML += `<div class="shoe-card" category=${shoe[2]}>
     <img class="shoe-image" src="${shoe[6]}" alt="The Sneaker">
-    <div>
-      <h2 class="shoe-head">${shoe[1]}</h2>
-      <h3 class="shoe-brand">${shoe[2]}</h3>
-      <p class="gender">${shoe[3]}</p>
-      <p class="shoe-description">${shoe[4]}</p>
-      <h4 class="price">R${shoe[5]}</h4>
-      </div>
       <a href="./products.html">View</a>
       </div>`;
   });
