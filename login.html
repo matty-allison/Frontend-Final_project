@@ -5,18 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <script
+      src="https://kit.fontawesome.com/284f158042.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
+    <h1 class="heading">Sneakeromatic</h1>
+    <a class="homeBtn" href="./index.html"><i class="fas fa-home"></i></a>
     <div id="form-container">
-        <form action="">
+        <h2>login</h2>
+        <form class="form">
             <input type="text" name="name" id="login-name" placeholder="Enter your fullname..." required>
             <input type="password" name="password" id="login-password" placeholder="Enter your password..." required>
-            <button onclick="event.preventDefault(), loginUser()" class="logi-btn" type="submit">login</button>
+            <button onclick="event.preventDefault(), loginUser()" class="login-btn" type="submit">login</button>
         </form>
         <p class="message"></p>
     </div>
-    <a href="./register.html">Haven't registered?</a>
+    <a class="registerBtn" href="./register.html">Haven't registered?</a>
+    <p><i class="far fa-copyright"></i></p>
     <script src="css/javascript/login.js"></script>
 </body>
 </html>
