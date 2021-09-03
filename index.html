@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+    />
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <script
       src="https://kit.fontawesome.com/284f158042.js"
@@ -15,6 +27,7 @@
     <title>HomePage</title>
   </head>
   <body>
+    <!-- Nav section -->
     <div class="navSection">
       <h1>Sneakeromatic</h1>
       <a class="productBtn" href="./products.html"><img src="./css/images/sneakers.png" alt="Sneakers"></a>
@@ -22,18 +35,58 @@
       <div class="logoutbtn-container"></div>
       <div class="redirectContainer"></div>
     </div>
+    <!-- Filter Buttons -->
       <div id="filter-buttons">
-          <button onclick="productFilter('NIKE')" class="brand">Nike</button>
-          <button onclick="productFilter('Adidas')" class="brand">Adidas</button>
-          <button onclick="productFilter('vans')" class="brand">Vans</button>
+          <button onclick="productFilter('NIKE')" class="brand"><img src="./css/images/NIKE.jpg" alt="Nike"></button>
+          <button onclick="productFilter('Adidas')" class="brand"><img src="./css/images/ADIDAS.jpg" alt="Adidas"></button>
+          <button onclick="productFilter('vans')" class="brand"><img src="./css/images/VANS.jpg" alt="Vans"></button>
       </div>
+      <!-- Sneakers container -->
     <div id="sneakers-container"></div> 
-    <div id="review-container"></div>
+    <!-- Review Container -->
+    <div class="owl-carousel">
+      <div id="review-container"></div>
+    </div>
+    <!-- Add review form -->
     <form action="">
       <input type="text" id="reviewName" name="review_name" placeholder="Enter your name..." required>
       <input type="text" id="review" name="review" placeholder="I love this site?!" required>
       <button onclick="event.preventDefault(), addReview()" class="reviewbtn">Add</button>
     </form>
     <script src="css/javascript/homePage.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+          items: 1,
+          margin: 50,
+          loop: true,
+          stagePadding: 100,
+          dots: false,
+          autoplay: true,
+          responsive: {
+            0: {
+              items: 1,
+              stagePadding: 0,
+            },
+            500: {
+              items: 1,
+              margin: 50,
+              stagePadding: 100,
+            },
+          },
+            autoplay: true,
+        });
+      });
+    </script>
   </body>
 </html>

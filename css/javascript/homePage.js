@@ -28,8 +28,8 @@ fetch("https://sneakeromatic-api.herokuapp.com/show-reviews/")
     let reviews = data.data;
     let container = document.querySelector("#review-container");
     reviews.forEach((review) => {
-      container.innerHTML += `<h3 class="review-name">${review[1]}</h3>
-          <p class="review">${review[2]}</p>`;
+      container.innerHTML += `<div class="review-card"><h3 class="review-name">${review[1]}</h3>
+          <p class="review">${review[2]}</p></div>`;
     });
   });
 
@@ -83,10 +83,10 @@ function redirectUser() {
   let container = document.querySelector('.redirectContainer')
   let user = JSON.parse(localStorage.getItem('user'))
   if(user == null) {
-    container.innerHTML = `<a href="./login.html" class="loginBtn">Login</a>`
+    container.innerHTML = `<a href="./login.html" class="loginBtn"><i class="fas fa-user"></i></a>`
   }
   else{
-    container.innerHTML = `<a href="./checkout.html" class="cartBtn">Cart</a>`
+    container.innerHTML = `<a href="./checkout.html" class="cartBtn"><i class="fas fa-shopping-cart"></i></a>`
   }
 }
 redirectUser()
