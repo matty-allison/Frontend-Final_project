@@ -31,6 +31,28 @@ fetch("https://sneakeromatic-api.herokuapp.com/show-reviews/")
       container.innerHTML += `<div class="review-card"><h3 class="review-name">${review[1]}</h3>
           <p class="review">${review[2]}</p></div>`;
     });
+
+    $(document).ready(function(){
+      $(".owl-carousel").owlCarousel({
+        items: 1,
+          margin: 60,
+          loop: true,
+          stagePadding: 10,
+          dots: false,
+          autoplay: true,
+          responsive: {
+            0: {
+              items: 1,
+              stagePadding: 0,
+            },
+            500: {
+              items: 1,
+              margin: 50,
+              stagePadding: 0,
+            },
+          },
+      });
+    });
   });
 
 // filter Products by brand
@@ -59,6 +81,10 @@ function addReview(){
   .then(data => {
     window.location.reload()
   })
+}
+
+function toggleModal(modalID) {
+  document.getElementById(modalID).classList.toggle("active");
 }
 
 // function to greet user

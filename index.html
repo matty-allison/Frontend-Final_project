@@ -4,20 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-      crossorigin="anonymous"
-    />
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <script
       src="https://kit.fontawesome.com/284f158042.js"
@@ -44,49 +34,22 @@
       <!-- Sneakers container -->
     <div id="sneakers-container"></div> 
     <!-- Review Container -->
-    <div class="owl-carousel">
-      <div id="review-container"></div>
+    <div class="commentSection">
+      <div id="review-container" class="owl-carousel"></div>
+      <button onclick="toggleModal('modal')">+</button>
     </div>
     <!-- Add review form -->
-    <form action="">
-      <input type="text" id="reviewName" name="review_name" placeholder="Enter your name..." required>
-      <input type="text" id="review" name="review" placeholder="I love this site?!" required>
-      <button onclick="event.preventDefault(), addReview()" class="reviewbtn">Add</button>
-    </form>
-    <script src="css/javascript/homePage.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      $(document).ready(function () {
-        $(".owl-carousel").owlCarousel({
-          items: 1,
-          margin: 50,
-          loop: true,
-          stagePadding: 100,
-          dots: false,
-          autoplay: true,
-          responsive: {
-            0: {
-              items: 1,
-              stagePadding: 0,
-            },
-            500: {
-              items: 1,
-              margin: 50,
-              stagePadding: 100,
-            },
-          },
-            autoplay: true,
-        });
-      });
-    </script>
+    <div  id="modal" class="modal">
+      <button class="close" onclick="toggleModal('modal')">X</button>
+      <form>
+        <h2 style="color: white; text-shadow: 0px 3px 15px red;">Review</h2>
+        <input type="text" id="reviewName" name="review_name" placeholder="Enter your name..." required>
+        <input type="text" id="review" name="review" placeholder="I love this site?!" required>
+        <button onclick="event.preventDefault(), addReview()" class="reviewbtn">Add</button>
+      </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="css/javascript/homePage.js"></script>
   </body>
 </html>

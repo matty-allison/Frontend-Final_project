@@ -135,7 +135,7 @@ body{
 }
 
 .redirectContainer a:hover {
-    text-shadow: 0px 3px 15px black;
+    text-shadow: 0px 3px 15px red;
 }
 
 /* Filter btn css */
@@ -168,20 +168,106 @@ body{
 
 /* review */
 #review-container {
-    width: 50vw;
-    margin: 5% 0px 5% 0px;
-    background-color: black;
+    width: 47vw;
+    height: 15%;
+    margin: 10% 0px 5% 2%;
     text-align: center;
     display: flex;
     gap: 20px;
+    box-shadow: 0px 3px 15px black;
 }
 
 .review-card{
-    width: 80%;
-    margin: 2%;
-    background-color: white;
+    color: black;
+    backdrop-filter: blur(5px);
+    padding: 5px;
+    font-size: 15px;
 }
+
+.commentSection button {
+    border: none;
+    width: 3%;
+    height: 20px;
+    position: relative;
+    bottom: 65px;
+    left: 640px;
+    background: none;
+    font-size: 25px;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0px 3px 15px black;
+    transition: ease-in-out 0.3s;
+}
+
+.commentSection button:hover {
+    transform: rotateY(360deg);
+}
+
+.modal {
+    display: none;
+    height: 60%;
+    width: 50%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  }
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+}
+
+.modal input {
+    background: none;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    outline: none;
+    text-align: center;
+    width: 250px;
+}
+
+.reviewbtn {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-family: 'Lobster', cursive;
+    transition: ease-in-out 0.3s;
+}
+
+.reviewbtn:hover {
+    text-shadow: 0px 3px 15px red;
+}
+
+.close{
+    display: flex;
+    position: fixed;
+    top: 22%;
+    right: 27%;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: 800;
+    transition: ease-in-out 0.3s;
+}
+
+.close:hover{
+    text-shadow: 0px 5px 15px red;
+    transform: rotateX(360deg);
+}
+
+  .modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 2;
+    left: 25%;
+    top: 20%;
+  }
 
 .owl-carousel {
     overflow: hidden;
-  }
+}

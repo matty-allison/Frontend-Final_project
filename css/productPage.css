@@ -3,8 +3,10 @@ body{
     padding: 0;
     font-size: 90%;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(./images/login\ wallpaper.jpg);
+    background-attachment: fixed;
 }
 
+/* the sneaker */
 .shoe-image{
     width: 300px;
     height: 250px;
