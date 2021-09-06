@@ -1,274 +1,286 @@
-body{
-    margin: 0;
-    padding: 0;
-    font-size: 90%;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(./images/wallpaper.jpg);
-    background-attachment: fixed;
-    font-family: 'Lobster', cursive;
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 90%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(./images/wallpaper.jpg);
+  background-attachment: fixed;
+  font-family: "Lobster", cursive;
+}
+
+/* advertSection */
+
+#models-container img {
+  width: 80vw;
+  padding-left: 10%;
+  object-fit: cover;
+  height: 75vh;
+  margin-top: 9%;
 }
 
 /* Shoe css */
-.shoe-card{
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    border: 4px solid black;
-    box-shadow: 0px 3px 30px black;
-    font-size: 20px;
+.shoe-card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 4px solid black;
+  box-shadow: 0px 3px 30px black;
+  font-size: 20px;
 }
 
 .shoe-card a {
-    text-decoration: none;
-    color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: red;
-    height: 30px;
-    transition: ease-in-out 0.3s;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  height: 30px;
+  transition: ease-in-out 0.3s;
 }
 
-.shoe-card a:hover{
-    color: white;
-    text-shadow: 0px 3px 15px black;
+.shoe-card a:hover {
+  color: white;
+  text-shadow: 0px 3px 15px black;
 }
 
-.shoe-image{
-    width: 250px;
-    height: 200px;
-    object-fit: cover;
+.shoe-image {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
 }
 
-#sneakers-container{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-left: 15%;
-    margin-right: 15%;
+#sneakers-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 /* Nav css */
 .navSection {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 15%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  width: 100vw;
+  height: 15%;
 }
 
 .navSection h1 {
-    position: fixed;
-    top: 0;
-    left: 0;
-    margin: 20px;
-    text-shadow: 0px 10px 20px red;
-    font-size: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 20px;
+  text-shadow: 0px 10px 20px red;
+  font-size: 40px;
 }
 
 .productBtn img {
-    position: fixed;
-    top: 0;
-    left: 68%;
-    margin: 10px;
-    width: 75px;
-    height: 75px;
+  position: fixed;
+  top: 0;
+  left: 68%;
+  margin: 10px;
+  width: 75px;
+  height: 75px;
 }
 
 .productBtn img:hover {
-    animation: pulse 4s infinite;
+  animation: pulse 4s infinite;
 }
 
 @keyframes pulse {
-    100% {
-      transform: scale(0.9);
-    }
-    70% {
-      transform: scale(1);
-    }
-  
-    0% {
-      transform: scale(0.9);
-    }
+  100% {
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1);
   }
 
-  #usernameDisplay {
-      position: fixed;
-      top: 0;
-      left: 41%;
-      margin: 35px;
-      font-size: 20px;
-      color: white;
-      text-shadow: 0px 3px 15px red;
+  0% {
+    transform: scale(0.9);
   }
+}
+
+#usernameDisplay {
+  position: fixed;
+  top: 0;
+  left: 41%;
+  margin: 35px;
+  font-size: 20px;
+  color: white;
+  text-shadow: 0px 3px 15px red;
+}
 
 .logoutbtn-container button {
-    position: fixed;
-    top: 0;
-    left: 76%;
-    margin: 30px;
-    font-size: 20px;
-    background: none;
-    border: 3px solid white;
-    width: 110px;
-    height: 40px;
-    color: #ffffff;
-    font-family: 'Lobster', cursive;
-    transition: ease-in-out 0.3s;
+  position: fixed;
+  top: 0;
+  left: 76%;
+  margin: 30px;
+  font-size: 20px;
+  background: none;
+  border: 3px solid white;
+  width: 110px;
+  height: 40px;
+  color: #ffffff;
+  font-family: "Lobster", cursive;
+  transition: ease-in-out 0.3s;
 }
 
 .logoutbtn-container button:hover {
-    color: black;
-    background: white;
-    text-shadow: 0px 3px 15px red;
+  color: black;
+  background: white;
+  text-shadow: 0px 3px 15px red;
 }
 
 .redirectContainer a {
-    position: fixed;
-    top: 0;
-    right: 4%;
-    margin: 32px;
-    font-size: 25px;
-    color: white;
-    text-decoration: none;
-    transition: ease-in-out 0.3s;
+  position: fixed;
+  top: 0;
+  right: 4%;
+  margin: 32px;
+  font-size: 25px;
+  color: white;
+  text-decoration: none;
+  transition: ease-in-out 0.3s;
 }
 
 .redirectContainer a:hover {
-    text-shadow: 0px 3px 15px red;
+  text-shadow: 0px 3px 15px red;
 }
 
 /* Filter btn css */
 
 #filter-buttons {
-    display: flex;
-    justify-content: center;
-    margin: 5%;
-    gap: 5%;
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+  gap: 5%;
 }
 
 .brand {
-    background-color: white;
-    border: none;
-    width: 150px;
-    height: 120px;
-    box-shadow: 0px 3px 20px black;
-    transition: ease-in-out 0.3s;
+  background-color: white;
+  border: none;
+  width: 150px;
+  height: 120px;
+  box-shadow: 0px 3px 20px black;
+  transition: ease-in-out 0.3s;
 }
 
-.brand:hover{
-    box-shadow: 0px 3px 20px red;
+.brand:hover {
+  box-shadow: 0px 3px 20px red;
 }
 
-.brand img{
-    width: 142px;
-    height: 115px;
-    margin-right: 15px;
+.brand img {
+  width: 142px;
+  height: 115px;
+  margin-right: 15px;
 }
 
 /* review */
 #review-container {
-    width: 47vw;
-    height: 15%;
-    margin: 10% 0px 5% 2%;
-    text-align: center;
-    display: flex;
-    gap: 20px;
-    box-shadow: 0px 3px 15px black;
+  width: 47vw;
+  height: 15%;
+  margin: 10% 0px 5% 2%;
+  text-align: center;
+  display: flex;
+  gap: 20px;
+  box-shadow: 0px 3px 15px black;
 }
 
-.review-card{
-    color: black;
-    backdrop-filter: blur(5px);
-    padding: 5px;
-    font-size: 15px;
+.review-card {
+  color: black;
+  backdrop-filter: blur(5px);
+  padding: 5px;
+  font-size: 15px;
 }
 
 .commentSection button {
-    border: none;
-    width: 3%;
-    height: 20px;
-    position: relative;
-    bottom: 65px;
-    left: 640px;
-    background: none;
-    font-size: 25px;
-    font-weight: 800;
-    color: white;
-    text-shadow: 0px 3px 15px black;
-    transition: ease-in-out 0.3s;
+  border: none;
+  width: 3%;
+  height: 20px;
+  position: relative;
+  bottom: 65px;
+  left: 640px;
+  background: none;
+  font-size: 25px;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0px 3px 15px black;
+  transition: ease-in-out 0.3s;
 }
 
 .commentSection button:hover {
-    transform: rotateY(360deg);
+  transform: rotateY(360deg);
 }
 
 .modal {
-    display: none;
-    height: 60%;
-    width: 50%;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-  }
+  display: none;
+  height: 60%;
+  width: 50%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+}
 
 .modal form {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 30px;
 }
 
 .modal input {
-    background: none;
-    border: none;
-    border-bottom: 2px solid white;
-    color: white;
-    outline: none;
-    text-align: center;
-    width: 250px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+  outline: none;
+  text-align: center;
+  width: 250px;
 }
 
 .reviewbtn {
-    color: white;
-    background: none;
-    border: none;
-    font-size: 16px;
-    font-family: 'Lobster', cursive;
-    transition: ease-in-out 0.3s;
+  color: white;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-family: "Lobster", cursive;
+  transition: ease-in-out 0.3s;
 }
 
 .reviewbtn:hover {
-    text-shadow: 0px 3px 15px red;
+  text-shadow: 0px 3px 15px red;
 }
 
-.close{
-    display: flex;
-    position: fixed;
-    top: 22%;
-    right: 27%;
-    color: white;
-    background: none;
-    border: none;
-    font-size: 20px;
-    font-weight: 800;
-    transition: ease-in-out 0.3s;
+.close {
+  display: flex;
+  position: fixed;
+  top: 22%;
+  right: 27%;
+  color: white;
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: 800;
+  transition: ease-in-out 0.3s;
 }
 
-.close:hover{
-    text-shadow: 0px 5px 15px red;
-    transform: rotateX(360deg);
+.close:hover {
+  text-shadow: 0px 5px 15px red;
+  transform: rotateX(360deg);
 }
 
-  .modal.active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    z-index: 2;
-    left: 25%;
-    top: 20%;
-  }
+.modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 2;
+  left: 25%;
+  top: 20%;
+}
 
 .owl-carousel {
-    overflow: hidden;
+  overflow: hidden;
 }
