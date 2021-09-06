@@ -4,40 +4,46 @@ function displayCart(array) {
     let container = document.querySelector('.cart-container')
     container.innerHTML = ''
     array.forEach((shoe) => {
-        container.innerHTML += `<div class="shoe-card-cart">
-        <img class="shoe-image-cart" src="${shoe[6]}" alt="The Sneaker">
-        <div>
-          <h2 class="shoe-head-cart">${shoe[1]}</h2>
-          <h3 class="shoe-brand-cart">${shoe[2]}</h3>
-          <p class="gender-cart">${shoe[3]}</p>
-          <p class="shoe-description-cart">${shoe[4]}</p>
-          <h4 class="price-cart">R${shoe[5]}</h4>
-          </div>
-          <button onclick='removeSneaker(${shoe[0]})'>remove</button>
-          </div>`
+        container.innerHTML += `
+        <div class="shoe-card-cart">
+            <img class="shoe-image-cart" src="${shoe[6]}" alt="The Sneaker">
+            <div class="info">
+                <h2 class="shoe-head-cart">${shoe[1]}</h2>
+                <h3 class="shoe-brand-cart">${shoe[2]}</h3>
+                <p class="gender-cart">${shoe[3]}</p>
+                <p class="shoe-description-cart">${shoe[4]}</p>
+                <h4 class="price-cart">R${shoe[5]}</h4>
+            </div>
+            <button onclick='removeSneaker(${shoe[0]})'>&times;</button>
+        </div>`
     })
 }
 sneakers = JSON.parse(localStorage.getItem('cart'))
 let price = JSON.parse(localStorage.getItem('price'))
 
 if (sneakers == null) {
-    document.querySelector('.emptyCart').innerHTML = 'Your cart is empty.'
+    document.querySelector('.emptyCart').innerHTML = '<p class="emptyCartMessage">Your cart is empty.</p>'
 }
 else{
     displayCart(sneakers)
-    document.querySelector('.totalPrice').innerHTML = "R"+price
+    document.querySelector('.totalPrice').innerHTML = "Total price: R"+price
 }
 
 // remove sneaker from cart
 function removeSneaker(id) {
-    let cart = []
-    let restOfSneaker = sneakers.filter(sneaker => sneaker[0] != id)
-    localStorage.setItem('cart', JSON.stringify(restOfSneaker))
-    cart = JSON.parse(localStorage.getItem('cart'))
-    let newPrice = cart.reduce((total, c) => total + parseInt(c[5]), 0)
-    localStorage.setItem('price', newPrice)
-    document.querySelector('.totalPrice').innerHTML = 'R'+newPrice
-    window.location.reload()
+    if (confirm("Are you sure you would like to remove this product")) {
+        let cart = []
+        let restOfSneaker = sneakers.filter(sneaker => sneaker[0] != id)
+        localStorage.setItem('cart', JSON.stringify(restOfSneaker))
+        cart = JSON.parse(localStorage.getItem('cart'))
+        let newPrice = cart.reduce((total, c) => total + parseInt(c[5]), 0)
+        localStorage.setItem('price', newPrice)
+        document.querySelector('.totalPrice').innerHTML = 'R'+newPrice
+        window.location.reload()
+    }
+    else {
+        console.log("product Removal from cart cancelled")
+    }
 }
 
 // user pick up or delivery function
@@ -46,18 +52,18 @@ function collection() {
     let container = document.querySelector('.collection-or-delivery')
     let cart = JSON.parse(localStorage.getItem('cart'))
     if (cart == null) {
-        container.innerHTML = 'Please select a item to purchase'
+        container.innerHTML = '<p class="rejectMessage">Please select a item to purchase</p>'
     }
     else if (cart == []) {
-        container.innerHTML = 'Please select a item to purchase'
+        container.innerHTML = '<p class="rejectMessage">Please select a item to purchase</p>'
     }
     else{
-        container.innerHTML = `<div>
-        <button></button> <p>Cavendish location</p>
-        <button></button> <p>Century City location</p>
-        <button></button> <p>Blue Route location</p>
-        <button></button> <p>Bayside Mall location</p>
-    </div>`
+        container.innerHTML = `<form>
+        <label for="location1"><input type="radio" name="location" id="location1" value="Cavendish location">Cavendish location</label><br>
+        <label for="location2"><input type="radio" name="location" id="location2" value="Century City location">Century City location</label><br>
+        <label for="location3"><input type="radio" name="location" id="location3" value="Blue Route location">Blue Route location</label><br>
+        <label for="location4"><input type="radio" name="location" id="location4" value="Bayside Mall location">Bayside Mall location</label><br>
+    </form>`
     }
 }
 
@@ -65,15 +71,16 @@ function delivery() {
     let container = document.querySelector('.collection-or-delivery')
     let cart = JSON.parse(localStorage.getItem('cart'))
     if (cart == null) {
-        container.innerHTML = 'Please select a item to purchase'
+        container.innerHTML = '<p class="rejectMessage">Please select a item to purchase</p>'
     }
     else if (cart == []) {
-        container.innerHTML = 'Please select a item to purchase'
+        container.innerHTML = '<p class="rejectMessage">Please select a item to purchase</p>'
     }
     else{
-        container.innerHTML = `<button></button> <p>Courier Guy</p>
-        <button></button> <p>Ups</p>
-        <button></button> <p>Postnet to Postnet</p>`
+        container.innerHTML = `<form><label for="delvery1"><input type="radio" name="delivery" id="delivery1" value="Courier Guy">Courier Guy</label><br>
+                                    <label for="delvery2"><input type="radio" name="delivery" id="delivery2" value="Ups">Ups</label><br>
+                                    <label for="delvery3"><input type="radio" name="delivery" id="delivery3" value="Postnet to Postnet">Postnet to Postnet</label><br>
+                                </form>`
     }
 }
 
@@ -83,14 +90,19 @@ function checkoutProduct() {
     let container = document.querySelector('.collection-or-delivery')
     let cart = JSON.parse(localStorage.getItem('cart'))
     if (cart == null) {
-        container.innerHTML = "You can't checkout with nothing in the cart."
+        container.innerHTML = "<p class='rejectMessage'>You can't checkout with nothing in the cart.</p>"
     }
     else if (cart == []) {
-        container.innerHTML = "You can't checkout with nothing in the cart."
+        container.innerHTML = "<p class='rejectMessage'>You can't checkout with nothing in the cart.</p>"
     }
     else{
-        localStorage.removeItem('cart')
-        container.innerHTML = "Thank you for your purchase"
-        window.location.replace('./index.html')
+        if(confirm('Are you sure you would like to checkout?')) {
+            localStorage.removeItem('cart')
+            container.innerHTML = "Thank you for your purchase"
+            window.location.replace('./index.html')
+        }
+        else {
+            console.log('user is still buying sneakers');
+        }
     }
 }

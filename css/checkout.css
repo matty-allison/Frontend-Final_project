@@ -1,10 +1,232 @@
 body{
     margin: 0;
     padding: 0;
+    font-size: 90%;
     font-family:'Lobster', cursive;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(./images/wallpaper.jpg);
+    background-attachment: fixed;
 }
-
+/* Products in cart */
 .shoe-image-cart{
     width: 300px;
     height: 250px;
+    object-fit: cover;
+}
+
+/* navbar */
+.navSection {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 15%;
+}
+
+.navSection h1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    text-shadow: 0px 10px 20px red;
+    font-size: 40px;
+}
+
+
+.homeBtn {
+    position: fixed;
+    top: 0;
+    left: 90%;
+    margin: 35px;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    transition: ease-in-out 0.3s;
+}
+
+.homeBtn:hover {
+    text-shadow: 0px 3px 15px red;
+}
+
+.continueBtn {
+    position: fixed;
+    top: 0;
+    left: 76%;
+    margin: 39px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    transition: ease-in-out 0.3s;
+}
+
+.continueBtn:hover {
+    text-shadow: 0px 3px 15px red;
+}
+
+.totalPrice {
+    position: fixed;
+    top: 0;
+    left: 41%;
+    margin: 35px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 0px 3px 15px red;
+}
+
+/* cart section */
+.cart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    margin-top:  10%;
+    gap: 15px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.shoe-card-cart {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    background-color: white;
+    box-shadow: 0px 10px 20px black;
+}
+
+.shoe-card-cart button {
+    position: relative;
+    bottom: 100px;
+    left: 20px;
+    border: none;
+    background: none;
+    font-size: 25px;
+    transition: ease-in-out 0.3s;
+}
+
+.shoe-card-cart button:hover {
+    color: red;
+    text-shadow: 0px 3px 15px black;
+}
+
+.info {
+    background: red;
+    padding: 10px;
+    box-shadow: 0px 10px 20px black; 
+}
+
+.price-cart {
+    color: white;
+    text-shadow: 0px 3px 15px black;
+}
+
+.shoe-head-cart {
+    color: white;
+    text-shadow: 0px 3px 15px black;
+}
+
+.emptyCartMessage{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    text-shadow: 0px 3px 15px red;
+    color: white;
+}
+
+.rejectMessage {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+    text-shadow: 0px 3px 15px red;
+}
+
+.checkBtns {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    gap: 10px;
+}
+
+.collection {
+    width: 15%;
+    height: 30px;
+    background: none;
+    color: black;
+    font-size: 20px;
+    border: none;
+    font-family: 'Lobster', cursive;
+    transition: ease-in-out 0.3s;
+    text-shadow: 0px 3px 15px white;
+    outline: none;
+}
+
+.collection:hover {
+    color: white;
+    background: black;
+    border-radius: 25px;
+    text-shadow: 0px 3px 15px red;
+}
+
+.delivery{
+    width: 15%;
+    height: 30px;
+    background: none;
+    color: black;
+    font-size: 20px;
+    border: none;
+    font-family: 'Lobster', cursive;
+    transition: ease-in-out 0.3s;
+    text-shadow: 0px 3px 15px white;
+    outline: none;
+}
+
+.delivery:hover {
+    color: white;
+    background: black;
+    border-radius: 25px;
+    text-shadow: 0px 3px 15px red;
+}
+
+.collection-or-delivery {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    font-size: 20px;
+    text-shadow: 0px 3px 15px black;
+    color: white;
+    margin-bottom: 7%;
+}
+
+.collection-or-delivery form {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkoutBtn {
+    margin-bottom: 20px;
+    position: fixed;
+    bottom: 0;
+    right: 40%;
+    width: 20%;
+    height: 45px;
+    background: white;
+    border-radius: 25px;
+    padding: 5px;
+    box-shadow: 0px 10px 20px black;
+    color: black;
+    font-size: 30px;
+    border: none;
+    font-family: 'Lobster', cursive;
+    outline: none;
+    transition: ease-in-out 0.3s;
+    text-shadow: 0px 3px 15px white;
+}
+
+.checkoutBtn:hover {
+    color: white;
+    background: black;
+    border-radius: 25px;
+    text-shadow: 0px 3px 15px red;
 }

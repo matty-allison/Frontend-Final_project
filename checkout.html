@@ -17,16 +17,16 @@
 <body>
     <!-- navbar -->
     <div class="navSection">
-        <h1 class="head">Sneakeromatic</h1>
-        <a href="./products.html">Continue shopping </a>
-        <a href="./index.html">Home</a>
+        <h1>Sneakeromatic</h1>
+        <!-- price of products total -->
+        <div class="totalPrice"></div>
+        <a class="continueBtn" href="./products.html">Continue shopping?</a>
+        <a class="homeBtn" href="./index.html"><i class="fas fa-home"></i></a>
     </div>
     <!-- products in cart -->
     <div class="cart-container"></div>
     <!-- container for message (empty cart message) -->
     <div class="emptyCart"></div>
-    <!-- price of products total -->
-    <div class="totalPrice"></div>
     <!-- collection or delivery buttons -->
     <div class="checkBtns">
         <button onclick="collection()" class="collection">Collection</button>
@@ -35,7 +35,7 @@
     <!-- collection or delivery info -->
     <div class="collection-or-delivery"></div>
     <!-- checkout button -->
-    <button onclick="checkoutProduct()" class="checkoutBtn">Checkout</button>
+        <button onclick="checkoutProduct()" class="checkoutBtn">Checkout</button>
     <script src="./css/javascript/checkout.js"></script>
 </body>
 </html>
