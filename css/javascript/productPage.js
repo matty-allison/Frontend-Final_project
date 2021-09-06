@@ -15,8 +15,10 @@ function displayAdminSneakers(array) {
         <p>Quantity: 1</p>
         <h4 class="price">R${shoe[5]}</h4>
         </div>
-        <button onclick="event.preventDefault(), deleteSneaker(${shoe[0]})" class="deletebtn">delete</button>
-        <button onclick="event.preventDefault(), updateSneaker(${shoe[0]})" class="updateBtn">Update</button>
+        <div> 
+        <button onclick="toggleModal('update-form-container')" class="updateBtnToggle">Update</button>
+        <button onclick="event.preventDefault(), deleteSneaker(${shoe[0]})" class="deletebtn">Delete</button>
+        </div>
         </div>`;
     });
   }
@@ -54,6 +56,7 @@ let sneakers = [];
       }
       else if (user.password == 'Mallison17$') {
         displayAdminSneakers(sneakers)
+        document.getElementById('addbtn-container').innerHTML = `<button onclick="toggleModal('add-form-container')" class="addBtn">Add</button>`
       }
       else{
         displaySneakers(sneakers)
@@ -160,6 +163,10 @@ function addSneaker() {
   }
 }
 
+function toggleModal(modalID) {
+  document.getElementById(modalID).classList.toggle("active");
+}
+
 // delete Product function
 function deleteSneaker(sneaker_id) {
   fetch('https://sneakeromatic-api.herokuapp.com/show-sneakers/')
@@ -183,14 +190,8 @@ function deleteSneaker(sneaker_id) {
 }
 
 // update Product function
-function updateSneaker(sneaker_id) {
-  fetch('https://sneakeromatic-api.herokuapp.com/show-sneakers/')
-  .then((res) => res.json())
-  .then(data => {
-    let sneakers = data.data
-    let updateSneaker = sneakers.find((shoe) => {
-      return shoe[0] == sneaker_id
-    })
+function updateSneaker() {
+    let sneakerId = document.querySelector('#sneakerId').value
     let sneakerName = document.querySelector('#sneakerName').value
     let sneakerBrand = document.querySelector('#sneakerBrand').value
     let gender = document.querySelector('#Gender').value
@@ -198,7 +199,7 @@ function updateSneaker(sneaker_id) {
     let sneakerPrice = document.querySelector('#sneakerPrice').value
     let sneakerImage = document.querySelector('#sneakerImage').value
     if (confirm("Are you sure you wish to update this product?")) {
-      fetch(`https://sneakeromatic-api.herokuapp.com/edit-sneaker/${sneaker_id}/`, {
+      fetch(`https://sneakeromatic-api.herokuapp.com/edit-sneaker/${sneakerId}/`, {
         method: 'PUT',
         body: JSON.stringify({
           sneaker_name: sneakerName,
@@ -220,7 +221,6 @@ function updateSneaker(sneaker_id) {
     else{
       console.log('update cancelled')
     }
-  })
 }
 
 // function redirect to cart or login
@@ -228,10 +228,10 @@ function redirectUser() {
   let container = document.querySelector('.redirectContainer')
   let user = JSON.parse(localStorage.getItem('user'))
   if(user == null) {
-    container.innerHTML = `<a href="./login.html" class="loginBtn">Login</a>`
+    container.innerHTML = `<a href="./login.html" class="loginBtn"><i class="fas fa-user"></i></a>`
   }
   else{
-    container.innerHTML = `<a href="./checkout.html" class="cartBtn">Cart</a>`
+    container.innerHTML = `<a href="./checkout.html" class="cartBtn"><i class="fas fa-shopping-cart"></i></a>`
   }
 }
 redirectUser()

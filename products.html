@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <script
+      src="https://kit.fontawesome.com/284f158042.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./css/productPage.css">
     <title>Sneakers Page</title>
 </head>
 <body>
+    <!-- nav Section -->
     <div class="navSection">
-        <a href="./index.html">Home</a>
-      <div class="logoutbtn-container"></div>
+        <h1 class="head">Sneakeromatic</h1>
+        <p class="subHead">Like what you see?</p>
+        <a class="homeBtn" href="./index.html"><i class="fas fa-home"></i></a>
+        <div class="logoutbtn-container"></div>
         <div class="redirectContainer"></div>
-        <span class="itemNumber"></span>
+        <span class="itemNumber">0</span>
     </div>
+    <!-- filters -->
     <div id="gender-container">
         <button onclick="window.location.reload()" class="genderbtn">All</button>
         <button onclick="genderFilter('Unisex')" class="genderbtn">Unisex</button>
@@ -21,18 +32,25 @@
         <button onclick="genderFilter('Female')" class="genderbtn">Womens</button>
     </div>
     <div id="filter-buttons">
-        <button onclick="window.location.reload()" class="brand">All</button>
-        <button onclick="productFilter('NIKE')" class="brand">Nike</button>
-        <button onclick="productFilter('ADIDAS')" class="brand">Adidas</button>
-        <button onclick="productFilter('VANS')" class="brand">Vans</button>
-        <button onclick="productFilter('BALENCIAGA')" class="brand">Balenciaga</button>
-        <button onclick="productFilter('CONVERSE')" class="brand">Converse</button>
-        <button onclick="productFilter('PUMA')" class="brand">Puma</button>
+        <button onclick="window.location.reload()" class="brand"><h1 style="font-family: 'Lobster', cursive;">All</h1></button>
+        <button onclick="productFilter('NIKE')" class="brand"><img src="./css/images/NIKE.jpg" alt="NIKE"></button>
+        <button onclick="productFilter('ADIDAS')" class="brand"><img src="./css/images/ADIDAS.jpg" alt="ADIDAS"></button>
+        <button onclick="productFilter('VANS')" class="brand"><img src="./css/images/VANS.jpg" alt="VANS"></button>
+        <button onclick="productFilter('BALENCIAGA')" class="brand"><img src="./css/images/BALENCIAGA.jpg" alt="BALENCIAGA"></button>
+        <button onclick="productFilter('CONVERSE')" class="brand"><img src="./css/images/CONVERSE.png" alt="CONVERSE"></button>
+        <button onclick="productFilter('PUMA')" class="brand"><img src="./css/images/PUMA.jpg" alt="PUMA"></button>
     </div>
-    <input type="text" id="search" placeholder="Search...">
+    <div class="searchbar-container">
+        <input type="text" id="search" placeholder="Search...">
+    </div>
+    <!-- product Section -->
     <div id="sneaker-container"></div>
-    <div class="add-form-container">
-        <h2>Add a sneaker</h2>
+    <div id="addbtn-container">
+    </div>
+    <!-- add form -->
+    <div id="add-form-container" class="add-form-container">
+        <h2 style="color: white; text-shadow: 0px 3px 15px red;">Add a sneaker</h2>
+        <button class="close" onclick="toggleModal('add-form-container')">&times;</button>
         <form>
             <input type="text" id="sneaker-name" name="sneaker_name" placeholder="Enter the name..." required>
             <input type="text" id="sneaker-brand" name="sneaker_brand" placeholder="Enter brand..." required>
@@ -43,16 +61,21 @@
             <button onclick="event.preventDefault() ,addSneaker()" class="addbtn">Add a sneaker</button>
         </form>
     </div>
-    <div class="update-form-container"></div>
-    <h2>Update a sneaker</h2>
-    <form>
-        <input type="text" id="sneakerName" name="sneaker_name" placeholder="Enter the new name..." required>
-        <input type="text" id="sneakerBrand" name="sneaker_brand" placeholder="Enter new brand..." required>
-        <input type="text" id="Gender" name="gender" placeholder="Enter different gender type..." required>
-        <input type="text" id="sneakerDescription" name="sneaker_description" placeholder="Enter a new description..." required>
-        <input type="text" id="sneakerPrice" name="sneaker_price" placeholder="Enter a different price..." required>
-        <input type="file" id="sneakerImage" name="sneaker_image" onchange="imageConverter()" required>
-    </form>
+    <!-- update form -->
+    <div id="update-form-container" class="update-form-container">
+        <h2 style="color: white; text-shadow: 0px 3px 15px red;">Update a sneaker</h2>
+        <button class="close2" onclick="toggleModal('update-form-container')">&times;</button>
+        <form>
+            <input type="text" id="sneakerId" name="sneaker_id" placeholder="Enter Id of product for update..." required>
+            <input type="text" id="sneakerName" name="sneaker_name" placeholder="Enter the new name..." required>
+            <input type="text" id="sneakerBrand" name="sneaker_brand" placeholder="Enter new brand..." required>
+            <input type="text" id="Gender" name="gender" placeholder="Enter different gender type..." required>
+            <input type="text" id="sneakerDescription" name="sneaker_description" placeholder="Enter a new description..." required>
+            <input type="text" id="sneakerPrice" name="sneaker_price" placeholder="Enter a different price..." required>
+            <input type="file" id="sneakerImage" name="sneaker_image" onchange="imageConverter()" required>
+            <button onclick="event.preventDefault(), updateSneaker()" class="updateBtn">Update</button>
+        </form>
+    </div>
     <img src="" alt="" class="imgholder" />
     <script src="./css/javascript/productPage.js"></script>
 </body>

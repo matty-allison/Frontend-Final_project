@@ -4,20 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <script
+      src="https://kit.fontawesome.com/284f158042.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./css/checkout.css">
     <title>Checkout</title>
 </head>
 <body>
-    <a href="./products.html">Continue shopping </a>
-    <a href="./index.html">Home</a>
+    <!-- navbar -->
+    <div class="navSection">
+        <h1 class="head">Sneakeromatic</h1>
+        <a href="./products.html">Continue shopping </a>
+        <a href="./index.html">Home</a>
+    </div>
+    <!-- products in cart -->
     <div class="cart-container"></div>
+    <!-- container for message (empty cart message) -->
     <div class="emptyCart"></div>
+    <!-- price of products total -->
     <div class="totalPrice"></div>
+    <!-- collection or delivery buttons -->
     <div class="checkBtns">
         <button onclick="collection()" class="collection">Collection</button>
         <button onclick="delivery()" class="delivery">Delivery</button>
     </div>
+    <!-- collection or delivery info -->
     <div class="collection-or-delivery"></div>
+    <!-- checkout button -->
     <button onclick="checkoutProduct()" class="checkoutBtn">Checkout</button>
     <script src="./css/javascript/checkout.js"></script>
 </body>
