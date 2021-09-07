@@ -78,7 +78,7 @@ function delivery() {
     }
     else{
         container.innerHTML = `<form><label for="delvery1"><input type="radio" name="delivery" id="delivery1" value="Courier Guy">Courier Guy</label><br>
-                                    <label for="delvery2"><input type="radio" name="delivery" id="delivery2" value="Ups">Ups</label><br>
+                                    <label for="delvery2"><input type="radio" name="delivery" id="delivery2" value="Ups">UPS</label><br>
                                     <label for="delvery3"><input type="radio" name="delivery" id="delivery3" value="Postnet to Postnet">Postnet to Postnet</label><br>
                                 </form>`
     }
