@@ -38,8 +38,11 @@ fetch("https://sneakeromatic-api.herokuapp.com/show-reviews/")
           margin: 60,
           loop: true,
           stagePadding: 10,
-          dots: false,
+          dots: true,
+          dotsEach: true,
           autoplay: true,
+          autoplayTimeout: 5000,
+          autoplayHoverPause: true,
           responsive: {
             0: {
               items: 1,
@@ -132,7 +135,7 @@ switchBtn()
 
 function logOutUser() {
   if (confirm('Are you sure you want to log out?')){
-    localStorage.removeItem('user')
+    localStorage.clear()
     window.location.reload()
   }
   else{

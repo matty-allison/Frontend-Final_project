@@ -6,6 +6,7 @@ function displayAdminSneakers(array) {
     container.innerHTML = ''
     array.forEach((shoe) => {
       container.innerHTML += `<div class="shoe-card" sex=${shoe[3]} category=${shoe[2]}>
+      <p>${shoe[0]}</p>
       <img class="shoe-image" src="${shoe[6]}" alt="The Sneaker">
       <div>
         <h2 class="shoe-head">${shoe[1]}</h2>
@@ -295,7 +296,7 @@ switchBtn()
 
 function logOutUser() {
   if (confirm('Are you sure you want to log out?')){
-    localStorage.removeItem('user')
+    localStorage.clear()
     window.location.reload()
   }
   else{

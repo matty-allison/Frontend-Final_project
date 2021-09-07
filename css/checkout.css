@@ -6,12 +6,6 @@ body{
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(./images/wallpaper.jpg);
     background-attachment: fixed;
 }
-/* Products in cart */
-.shoe-image-cart{
-    width: 300px;
-    height: 250px;
-    object-fit: cover;
-}
 
 /* navbar */
 .navSection {
@@ -70,9 +64,17 @@ body{
     font-size: 20px;
     color: white;
     text-shadow: 0px 3px 15px red;
+    font-family: sans-serif;
 }
 
 /* cart section */
+
+.shoe-image-cart{
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+}
+
 .cart-container {
     display: flex;
     align-items: center;
@@ -119,6 +121,7 @@ body{
 .price-cart {
     color: white;
     text-shadow: 0px 3px 15px black;
+    font-family: sans-serif;
 }
 
 .shoe-head-cart {
@@ -126,6 +129,7 @@ body{
     text-shadow: 0px 3px 15px black;
 }
 
+/* other details */
 .emptyCartMessage{
     display: flex;
     justify-content: center;
