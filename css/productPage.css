@@ -1,3 +1,7 @@
+* {
+    scroll-behavior: smooth;
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -114,8 +118,8 @@ body{
 }
 
 .close:hover{
-    text-shadow: 0px 5px 15px red;
-    transform: rotateX(360deg);
+    color: red;
+    text-shadow: 0px 5px 15px white;
 }
 
 .add-form-container.active{
@@ -180,8 +184,8 @@ body{
 }
 
 .close2:hover{
-    text-shadow: 0px 5px 15px red;
-    transform: rotateX(360deg);
+    color: red;
+    text-shadow: 0px 5px 15px white;
 }
 
 .update-form-container.active{
@@ -378,6 +382,7 @@ body{
 
 .genderbtn {
     width: 17%;
+    text-align: center;
     height: 30px;
     border: none;
     font-size: 16px;
@@ -385,6 +390,22 @@ body{
     font-family:'Lobster', cursive;
     background: white;
     transition: ease-in-out 0.3s;
+}
+
+.genderbtn button {
+    width: 100%;
+    text-align: center;
+    border: none;
+    font-family: 'Lobster', cursive;
+    background: white;
+    height: 30px;
+    transition: ease-in-out 0.3s;
+}
+
+.genderbtn button:hover {
+    background: black;
+    color: white;
+    text-shadow: 0px 3px 15px red;
 }
 
 .genderbtn:hover {

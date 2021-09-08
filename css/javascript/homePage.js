@@ -86,7 +86,16 @@ function addReview(){
 }
 
 function toggleModal(modalID) {
-  document.getElementById(modalID).classList.toggle("active");
+  let modal = document.getElementById(modalID)
+  let body = document.querySelector("#bodyHome")
+  if(modal.classList.contains("active")){
+    modal.classList.toggle("active");
+    body.style.overflowY = "scroll"
+  }
+  else{
+    modal.classList.toggle("active");
+    body.style.overflowY = "hidden"
+  }
 }
 
 // function to greet user

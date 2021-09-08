@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="./css/productPage.css">
     <title>Sneakers Page</title>
 </head>
-<body>
+<body id="bodyHome">
     <!-- nav Section -->
     <div class="navSection">
         <h1 class="head">Sneakeromatic</h1>
@@ -31,19 +31,19 @@
     </div>
     <!-- filters -->
     <div id="gender-container">
-        <button onclick="window.location.reload()" class="genderbtn">All</button>
-        <button onclick="genderFilter('Unisex')" class="genderbtn">Unisex</button>
-        <button onclick="genderFilter('Males')" class="genderbtn">Mens</button>
-        <button onclick="genderFilter('Female')" class="genderbtn">Womens</button>
+        <a class="genderbtn" href="#sneaker-container"><button onclick="window.location.reload()">All</button></a>
+        <a class="genderbtn" href="#sneaker-container"><button onclick="genderFilter('Unisex')">Unisex</button></a>
+        <a class="genderbtn" href="#sneaker-container"><button onclick="genderFilter('Males')">Mens</button></a>
+        <a class="genderbtn" href="#sneaker-container"><button onclick="genderFilter('Female')">Womens</button></a>
     </div>
     <div id="filter-buttons">
-        <button onclick="window.location.reload()" class="brand"><h1 style="font-family: 'Lobster', cursive;">All</h1></button>
-        <button onclick="productFilter('NIKE')" class="brand"><img src="./css/images/NIKE.jpg" alt="NIKE"></button>
-        <button onclick="productFilter('ADIDAS')" class="brand"><img src="./css/images/ADIDAS.jpg" alt="ADIDAS"></button>
-        <button onclick="productFilter('VANS')" class="brand"><img src="./css/images/VANS.jpg" alt="VANS"></button>
-        <button onclick="productFilter('BALENCIAGA')" class="brand"><img src="./css/images/BALENCIAGA.jpg" alt="BALENCIAGA"></button>
-        <button onclick="productFilter('CONVERSE')" class="brand"><img src="./css/images/CONVERSE.png" alt="CONVERSE"></button>
-        <button onclick="productFilter('PUMA')" class="brand"><img src="./css/images/PUMA.jpg" alt="PUMA"></button>
+        <a href="#sneaker-container"><button onclick="window.location.reload()" class="brand"><h1 style="font-family: 'Lobster', cursive;">All</h1></button></a>
+        <a href="#sneaker-container"><button onclick="productFilter('NIKE')" class="brand"><img src="./css/images/NIKE.jpg" alt="NIKE"></button></a>
+        <a href="#sneaker-container"><button onclick="productFilter('ADIDAS')" class="brand"><img src="./css/images/ADIDAS.jpg" alt="ADIDAS"></button></a>
+        <a href="#sneaker-container"><button onclick="productFilter('VANS')" class="brand"><img src="./css/images/VANS.jpg" alt="VANS"></button></a>
+        <a href="#sneaker-container"><button onclick="productFilter('BALENCIAGA')" class="brand"><img src="./css/images/BALENCIAGA.jpg" alt="BALENCIAGA"></button></a>
+        <a href="#sneaker-container"><button onclick="productFilter('CONVERSE')" class="brand"><img src="./css/images/CONVERSE.png" alt="CONVERSE"></button></a>
+        <a href="#sneaker-container"><button onclick="productFilter('PUMA')" class="brand"><img src="./css/images/PUMA.jpg" alt="PUMA"></button></a>
     </div>
     <div class="searchbar-container">
         <input type="text" id="search" placeholder="Search...">
@@ -98,5 +98,15 @@
         </div>
       </div>
     <script src="./css/javascript/productPage.js"></script>
+    <script>$('a[href^="#"]').on('click',function (e) {
+      e.preventDefault();
+      var target = this.hash,
+      $target = $(target);
+      $('html, body').stop().animate({
+          'scrollTop': $target.offset().top
+      }, 700, 'swing', function () {
+          window.location.hash = target;
+      });
+  });</script>
 </body>
 </html>
