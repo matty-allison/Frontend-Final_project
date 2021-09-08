@@ -173,7 +173,7 @@ form input{
     }
   }
   
-  @media (max-width: 350px) {
+  @media (max-width: 360px) {
     #form-container {
       left: 10%;
     }
