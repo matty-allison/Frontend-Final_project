@@ -610,7 +610,7 @@ body {
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 320px) {
   .navSection h1 {
     margin: 10px;
     font-size: 18px;

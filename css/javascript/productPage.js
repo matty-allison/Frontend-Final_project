@@ -217,6 +217,7 @@ function updateSneaker() {
           gender: gender,
           sneaker_description: sneakerDescription,
           sneaker_price: sneakerPrice,
+          
           sneaker_image: sneakerImage
         }),
         headers: {
