@@ -17,7 +17,7 @@ function displayAdminSneakers(array) {
         <h4 class="price">R${shoe[5]}</h4>
         </div>
         <div> 
-        <button onclick="toggleModal('update-form-container')" class="updateBtnToggle">Update</button>
+        <button onclick="toggleModal('update-form-container'), sendId(${shoe[0]})" class="updateBtnToggle">Update</button>
         <button onclick="event.preventDefault(), deleteSneaker(${shoe[0]})" class="deletebtn">Delete</button>
         </div>
         </div>`;
@@ -176,6 +176,14 @@ function toggleModal(modalID) {
     body.style.overflowY = "hidden"
   }
 }
+
+function sendId(id) {
+  let foundSneaker = sneakers.find ((shoe) => {
+    return shoe[0] == id
+  })
+  document.getElementById('sneakerId').value = id
+}
+
 
 // delete Product function
 function deleteSneaker(sneaker_id) {
