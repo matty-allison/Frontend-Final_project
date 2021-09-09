@@ -67,6 +67,182 @@ body{
     font-family: sans-serif;
 }
 
+@media (max-width: 1110px) {
+    .continueBtn {
+        top: 0;
+        left: 70%;
+        margin: 39px;
+        font-size: 20px;
+    }
+
+    .navSection h1 {
+        top: 0;
+        left: 0;
+        margin: 20px;
+        font-size: 40px;
+    }
+
+    .homeBtn {
+        top: 0;
+        left: 90%;
+        margin: 35px;
+        font-size: 25px;
+    }
+
+}
+
+@media (max-width: 850px) {
+    .continueBtn {
+        top: 0;
+        left: 67%;
+        margin: 30px;
+        font-size: 18px;
+    }
+
+    .navSection h1 {
+        top: 0;
+        left: 0;
+        margin: 18px;
+        font-size: 35px;
+    }
+
+    .homeBtn {
+        top: 0;
+        left: 90%;
+        margin: 29px;
+        font-size: 20px;
+    }
+    .totalPrice {
+        top: 0;
+        left: 38%;
+        margin: 30px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 625px) {
+    .navSection {
+        height: 13%;
+    }
+    .continueBtn {
+        top: 0;
+        left: 64%;
+        margin: 30px;
+        font-size: 15px;
+    }
+
+    .navSection h1 {
+        top: 0;
+        left: 0;
+        margin: 18px;
+        font-size: 30px;
+    }
+
+    .homeBtn {
+        top: 0;
+        left: 90%;
+        margin: 29px;
+        font-size: 15px;
+    }
+    .totalPrice {
+        top: 0;
+        left: 35%;
+        margin: 30px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    .navSection {
+        height: 12%;
+    }
+    .navSection h1 {
+        top: 0;
+        left: 0;
+        margin: 15px;
+        font-size: 25px;
+    }
+    .continueBtn {
+        top: 0;
+        left: 64%;
+        margin: 25px;
+        font-size: 13px;
+    }
+
+    .homeBtn {
+        top: 0;
+        left: 90%;
+        margin: 25px;
+        font-size: 13px;
+    }
+    .totalPrice {
+        top: 0;
+        left: 35%;
+        margin: 25px;
+        font-size: 12px;
+    }
+}
+@media (max-width: 415px) {
+    .navSection {
+        height: 10%;
+    }
+    .navSection h1 {
+        top: 0;
+        left: 0;
+        margin: 7px;
+        font-size: 23px;
+    }
+    
+    .totalPrice {
+        top: 0;
+        left: 36%;
+        margin: 20px;
+        font-size: 10px;
+    }
+    .continueBtn {
+        top: 0;
+        left: 64%;
+        margin: 18px;
+        font-size: 10px;
+    }
+    .homeBtn {
+        top: 0;
+        left: 88%;
+        margin: 18px;
+        font-size: 10px;
+    }
+}
+@media (max-width: 320px) {
+    .navSection {
+        height: 9%;
+    }
+    .navSection h1 {
+        top: 0;
+        left: 0;
+        margin: 7px;
+        font-size: 20px;
+    }
+    
+    .totalPrice {
+        top: 0;
+        left: 36%;
+        margin: 17px;
+        font-size: 10px;
+    }
+    .continueBtn {
+        top: 0;
+        left: 65%;
+        margin: 17px;
+        font-size: 8px;
+    }
+    .homeBtn {
+        top: 0;
+        left: 88%;
+        margin: 17px;
+        font-size: 10px;
+    }
+}
+
 /* cart section */
 
 .shoe-image-cart{
@@ -128,6 +304,142 @@ body{
     color: white;
     text-shadow: 0px 3px 15px black;
 }
+
+@media (max-width: 1245px) {
+    .shoe-card-cart button {
+        left: 5px;
+    }
+}
+
+
+@media (max-width: 1135px) {
+    .cart-container {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+@media (max-width: 1045px) {
+    .cart-container {
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+}
+
+@media (max-width: 990px) {
+    .cart-container {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+@media (max-width: 900px) {
+    .cart-container {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+}
+
+@media (max-width: 850px) {
+    .shoe-card-cart {
+        width: 75%;
+    }
+    .cart-container {
+        margin-top: 12%;
+    }
+}
+
+@media (max-width: 750px) {
+    .shoe-card-cart {
+        width: 85%;
+    }
+    .cart-container {
+        margin-top: 13%;
+    }
+}
+
+@media (max-width: 625px) {
+    .shoe-card-cart {
+        width: 99%;
+    }
+    .cart-container {
+        margin-top: 13%;
+    }
+}
+
+@media (max-width: 550px) {
+    .shoe-image-cart{
+        width: 230px;
+        height: 180px;
+    }
+    .shoe-card-cart {
+        height: 50vh;
+    }
+    .cart-container {
+        margin-top: 15%;
+    }
+    .info {
+        font-size: 13px;
+    }
+}
+@media (max-width: 460px) {
+    .shoe-image-cart{
+        width: 200px;
+        height: 150px;
+    }
+    .shoe-card-cart {
+        height: 50vh;
+    }
+    .cart-container {
+        margin-top: 17%;
+    }
+    .info {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .shoe-image-cart{
+        width: 200px;
+        height: 150px;
+    }
+    .shoe-card-cart {
+        flex-direction: column;
+        height: 70vh;
+    }
+    .cart-container {
+        margin-top: 17%;
+        margin-left: 5%;
+        margin-right: 5%;
+
+    }
+    .info {
+        font-size: 12px;
+    }
+    .shoe-card-cart button {
+        bottom: 340px;
+        left: 130px;
+    }
+}
+
+@media (max-width: 300px) {
+    .cart-container {
+        margin-right: 3%;
+
+    }
+    .info {
+        font-size: 13px;
+    }
+    .shoe-card-cart {
+        flex-direction: column;
+        height: 72vh;
+    }
+    .shoe-card-cart button {
+        bottom: 350px;
+        left: 110px;
+    }
+}
+
 
 /* other details */
 .emptyCartMessage{
@@ -233,4 +545,83 @@ body{
     background: black;
     border-radius: 25px;
     text-shadow: 0px 3px 15px red;
+}
+
+@media (max-width: 825px) {
+    .collection-or-delivery {
+        margin-bottom: 9%;
+    }
+    .checkoutBtn {
+        height: 45px;
+        padding: 5px;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 580px) {
+    .collection-or-delivery {
+        margin-bottom: 11%;
+    }
+    .checkoutBtn {
+        height: 45px;
+        padding: 6px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 450px) {
+    .collection-or-delivery {
+        margin-bottom: 15%;
+    }
+    .checkoutBtn {
+        height: 45px;
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    .checkBtns {
+        margin-bottom: 10%;
+        margin-top: 5%;
+        gap: 30px;
+    }
+    .delivery{
+        width: 20%;
+        height: 30px;
+        font-size: 20px;
+    }
+
+    .collection {
+        width: 20%;
+        height: 30px;
+        font-size: 20px;
+    }
+}
+@media (max-width: 360px) {
+    .collection-or-delivery {
+        margin-bottom: 18%;
+    }
+    .checkoutBtn {
+        height: 45px;
+        width: 40%;
+        right: 30%;
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    .checkBtns {
+        margin-bottom: 10%;
+        margin-top: 5%;
+        gap: 40px;
+    }
+    .delivery{
+        width: 30%;
+        height: 30px;
+        font-size: 20px;
+    }
+
+    .collection {
+        width: 30%;
+        height: 30px;
+        font-size: 20px;
+    }
 }
