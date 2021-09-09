@@ -98,6 +98,7 @@ function checkoutProduct() {
     else{
         if(confirm('Are you sure you would like to checkout?')) {
             localStorage.removeItem('cart')
+            localStorage.removeItem('price')
             container.innerHTML = "Thank you for your purchase"
             window.location.replace('./index.html')
         }
