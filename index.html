@@ -72,6 +72,18 @@
         <button onclick="event.preventDefault(), addReview()" class="reviewbtn">Add</button>
       </form>
     </div>
+    <!-- user info display -->
+    <div id="userInfo" class="userInfo">
+      <button class="close" onclick="toggleModal('userInfo')">&times;</button>
+      <form>
+        <h2 style="color: white; text-shadow: 0px 3px 15px red;">Update</h2>
+        <input type="text" id="userId" name="id" placeholder="Enter your user id..." required>
+        <input type="text" id="userName" name="name" placeholder="Enter your name..." required>
+        <input type="text" id="userEmail" name="email" placeholder="Enter your email..." required>
+        <input type="text" id="userPassword" name="password" placeholder="Enter your password..." required>
+        <button onclick="event.preventDefault(), updateUser()" class="reviewbtn">Update</button>
+      </form>
+    </div>
     <!-- footer -->
     <div id="footer">
       <p><span>Sneakeromatic</span> by Matthew Allison</p>

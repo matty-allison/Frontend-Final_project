@@ -109,11 +109,50 @@ function displayGreeting() {
     document.getElementById('usernameDisplay').innerHTML = `Welcome back Admin`
   }
   else{
-    document.getElementById('usernameDisplay').innerHTML = `Welcome ${user.name}`
+    document.getElementById('usernameDisplay').innerHTML = `Welcome ${user.name} <i onclick="toggleModal('userInfo')" class="fas fa-pencil-alt"></i>`
   }
 }
 
 displayGreeting()
+
+ function updateUser() {
+   let userId = document.getElementById('userId').value
+   let userName = document.getElementById('userName').value
+   let userEmail = document.getElementById('userEmail').value
+   let userPassword = document.getElementById('userPassword').value
+   fetch(`https://sneakeromatic-api.herokuapp.com/edit-user/${userId}/`, {
+     method: 'PUT',
+     body: JSON.stringify({
+       name: userName,
+       email: userEmail,
+       password: userPassword
+     }),
+      headers: {
+        "Content-type": "application/json",
+      },
+   })
+   .then((res) =>  res.json())
+   .then(data => {
+     localStorage.clear()
+     window.location.replace('./login.html')
+   })
+ }
+
+function displayUserInfo() {
+  let user = []
+  user = JSON.parse(localStorage.getItem('user'))
+  if (user == null) {
+    console.log('');
+  }
+  else{
+    document.getElementById('userId').value = user.id
+    document.getElementById('userName').value = user.name
+    document.getElementById('userEmail').value = user.email
+    document.getElementById('userPassword').value = user.password
+  }
+}
+
+displayUserInfo()
 
 // function redirect to cart or login
 function redirectUser() {

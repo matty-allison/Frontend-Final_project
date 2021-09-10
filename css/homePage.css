@@ -949,6 +949,73 @@ body {
   }
 }
 
+/* user display */
+#userInfo {
+  display: none;
+  height: 60%;
+  width: 50%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+}
+#userInfo.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  color: white;
+  z-index: 2;
+  left: 25%;
+  top: 20%;
+}
+#userInfo form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 30px;
+}
+
+#userInfo input {
+  background: none;
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+  outline: none;
+  text-align: center;
+  width: 250px;
+}
+
+@media (max-width: 550px) {
+  #userInfo {
+    height: 60%;
+    width: 70%;
+  }
+  #userInfo.active {
+    left: 15%;
+    top: 20%;
+  }
+}
+
+@media (max-width: 470px) {
+  #userInfo {
+    height: 60%;
+    width: 80%;
+  }
+  #userInfo.active {
+    left: 10%;
+    top: 20%;
+  }
+}
+
+@media (max-width: 360px) {
+  #userInfo {
+    height: 60%;
+    width: 90%;
+  }
+  #userInfo.active {
+    left: 5%;
+    top: 18%;
+  }
+}
+
 /* footer */
 
 #footer {
