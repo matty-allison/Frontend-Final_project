@@ -71,7 +71,7 @@ body{
     display: none;
     height: 70%;
     width: 50%;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
 }
 
 .add-form-container form {
@@ -137,7 +137,7 @@ body{
     display: none;
     height: 75%;
     width: 50%;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
 }
 
 .update-form-container form {
@@ -316,6 +316,39 @@ body{
         font-size: 15px;
         padding: 5px;
     }
+    .update-form-container.active{
+        left: 15%;
+        top: 15%;
+    }
+    .update-form-container {
+        height: 80%;
+        width: 65%;
+    }
+    
+    .update-form-container form {
+        gap: 25px;
+    }
+    
+    .update-form-container input {
+        width: 250px;
+    }
+
+    .add-form-container.active{
+        left: 15%;
+        top: 15%;
+    }
+    .add-form-container {
+        height: 80%;
+        width: 65%;
+    }
+    
+    .add-form-container form {
+        gap: 25px;
+    }
+    
+    .add-form-container input {
+        width: 250px;
+    }
 }
 
 @media (max-width: 790px) {
@@ -370,6 +403,39 @@ body{
         width: 100%;
         height: 200px;
     }
+    .update-form-container.active{
+        left: 13%;
+        top: 15%;
+    }
+    .update-form-container {
+        height: 80%;
+        width: 75%;
+    }
+    
+    .update-form-container form {
+        gap: 25px;
+    }
+    
+    .update-form-container input {
+        width: 250px;
+    }
+
+    .add-form-container.active{
+        left: 13%;
+        top: 15%;
+    }
+    .add-form-container {
+        height: 80%;
+        width: 75%;
+    }
+    
+    .add-form-container form {
+        gap: 25px;
+    }
+    
+    .add-form-container input {
+        width: 250px;
+    }
 }
 
 @media (max-width: 460px) {
@@ -406,6 +472,46 @@ body{
         margin-top: 5%;
         margin-left: 0.5%;
         margin-right: 0.5%;
+    }
+    .update-form-container.active{
+        left: 10%;
+        top: 15%;
+    }
+    .update-form-container {
+        height: 80%;
+        width: 85%;
+    }
+    
+    .update-form-container form {
+        gap: 25px;
+    }
+    
+    .update-form-container input {
+        width: 250px;
+    }
+    .close2{
+        top: 18%;
+        right: 10%;
+    }
+    .add-form-container.active{
+        left: 10%;
+        top: 15%;
+    }
+    .add-form-container {
+        height: 80%;
+        width: 85%;
+    }
+    
+    .add-form-container form {
+        gap: 25px;
+    }
+    
+    .add-form-container input {
+        width: 250px;
+    }
+    .close{
+        top: 18%;
+        right: 10%;
     }
 }
 
