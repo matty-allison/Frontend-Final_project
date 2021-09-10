@@ -13,9 +13,9 @@ function displayCart(array) {
                 <p class="gender-cart">${shoe[3]}</p>
                 <p class="shoe-description-cart">${shoe[4]}</p>
                 <h4 class="price-cart">R${shoe[5]}</h4>
+                <input type="number" min=1 class="quntity" id="qunatity-${ shoe[0] }" value="${shoe[7]}" onchange="updateValue(${shoe[0]})">
             </div>
             <button onclick='removeSneaker(${shoe[0]})'>&times;</button>
-            <span>&times;${shoe[7]}</span>
         </div>`
     })
 }
@@ -48,6 +48,23 @@ function removeSneaker(id) {
     }
 }
 
+function updateValue(id) {
+    let newQunatity = document.getElementById(`qunatity-${ id }`).value
+    let foundSneaker = sneakers.find((shoe) => {
+        return shoe[0] == id
+    })
+    foundSneaker[7] = newQunatity
+
+    sneakers.forEach(shoe => {
+        if(shoe[0] == foundSneaker[0]){
+          shoe = [...shoe, ...foundSneaker]
+        }
+        return shoe
+    })
+
+    localStorage.setItem('cart', JSON.stringify(sneakers))
+    displayCart(sneakers)
+}
 // user pick up or delivery function
 
 function collection() {
