@@ -1,7 +1,11 @@
 // display sneakers in cart
+
+
+// cart.reduce((total, c) => total + (parseInt(c[5]) * c[7]), 0)
 let sneakers = []
 function displayCart(array) {
     let container = document.querySelector('.cart-container')
+    document.querySelector('.totalPrice').innerHTML = 'Total Price: R' + array.reduce((total, c) => total + (parseInt(c[5]) * c[7]), 0)
     container.innerHTML = ''
     array.forEach((shoe) => {
         container.innerHTML += `

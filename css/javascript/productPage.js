@@ -294,7 +294,7 @@ function addToCart(sneaker_id) {
           })
       }
       localStorage.setItem('cart', JSON.stringify(localCart))
-      let totalPrice = localCart.reduce((total, c) => total + parseInt(c[5]), 0)
+      let totalPrice = localCart.reduce((total, c) => total + (parseInt(c[5]) * c[7]), 0)
       localStorage.setItem('price', JSON.stringify(totalPrice))
       let cartSize = localCart.reduce((total, current) => total += current[7], 0)
       document.querySelector('.itemNumber').innerHTML = cartSize
