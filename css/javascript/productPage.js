@@ -258,21 +258,45 @@ function addToCart(sneaker_id) {
   fetch('https://sneakeromatic-api.herokuapp.com/show-sneakers')
   .then((res) => res.json())
   .then(data => {
+    // My Cart 
     let localCart = JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')) : []
-    let user = localStorage.getItem('user')
+    // Sneakers Data
     let sneakers = data.data
-    let addSneakerToCart = sneakers.find((shoe) => {
-      return shoe[0] == sneaker_id
-    })
+    let user = localStorage.getItem('user')
     if (user == null) {
       window.location = './login.html'
     }
     else{
-      localCart.push(addSneakerToCart)
-      let totalPrice = localCart.reduce((total, c) => total + parseInt(c[5]), 0)
+      // check if sneaker is in cart
+      let addSneakerToCart = localCart.find((shoe) => {
+        return shoe[0] == sneaker_id
+      })
+      // Update add to cart Item 
+      if(addSneakerToCart){
+        addSneakerToCart[7] ? addSneakerToCart[7]++ : addSneakerToCart[7] = 1
+      }else{
+        // create new item to add to cart 
+        addSneakerToCart = sneakers.find((shoe) => {
+          return shoe[0] == sneaker_id
+        })
+        addSneakerToCart[7] = 1
+      }    
+  
+      if (localCart.length == 0 || !localCart.some(shoe => shoe[0] == addSneakerToCart[0])){
+        localCart.push(addSneakerToCart)
+      } else{
+        
+          localCart.forEach(shoe => {
+            if(shoe[0] == addSneakerToCart[0]){
+              shoe = [...shoe, ...addSneakerToCart]
+            }
+            return shoe
+          })
+      }
       localStorage.setItem('cart', JSON.stringify(localCart))
+      let totalPrice = localCart.reduce((total, c) => total + parseInt(c[5]), 0)
       localStorage.setItem('price', JSON.stringify(totalPrice))
-      let cartSize = JSON.parse(localStorage.getItem('cart')).length
+      let cartSize = localCart.reduce((total, current) => total += current[7], 0)
       document.querySelector('.itemNumber').innerHTML = cartSize
     }
   })

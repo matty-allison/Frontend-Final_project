@@ -15,11 +15,13 @@ function displayCart(array) {
                 <h4 class="price-cart">R${shoe[5]}</h4>
             </div>
             <button onclick='removeSneaker(${shoe[0]})'>&times;</button>
+            <span>&times;${shoe[7]}</span>
         </div>`
     })
 }
 sneakers = JSON.parse(localStorage.getItem('cart'))
 let price = JSON.parse(localStorage.getItem('price'))
+
 
 if (sneakers == null) {
     document.querySelector('.emptyCart').innerHTML = '<p class="emptyCartMessage">Your cart is empty.</p>'
