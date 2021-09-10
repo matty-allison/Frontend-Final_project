@@ -41,7 +41,7 @@ fetch("https://sneakeromatic-api.herokuapp.com/show-reviews/")
           dots: true,
           dotsEach: true,
           autoplay: true,
-          autoplayTimeout: 5000,
+          autoplayTimeout: 8000,
           responsive: {
             0: {
               items: 1,

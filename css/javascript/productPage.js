@@ -13,7 +13,6 @@ function displayAdminSneakers(array) {
         <h3 class="shoe-brand">${shoe[2]}</h3>
         <p class="gender">${shoe[3]}</p>
         <p class="shoe-description">${shoe[4]}</p>
-        <p>Quantity: 1</p>
         <h4 class="price">R${shoe[5]}</h4>
         </div>
         <div> 
@@ -36,7 +35,6 @@ function displaySneakers(array) {
       <h3 class="shoe-brand">${shoe[2]}</h3>
       <p class="gender">${shoe[3]}</p>
       <p class="shoe-description">${shoe[4]}</p>
-      <p>Quantity: 1</p>
       <h4 class="price">R${shoe[5]}</h4>
       </div>
       <button onclick="addToCart(${shoe[0]})" class="purchaseBtn">Purchase</button>
