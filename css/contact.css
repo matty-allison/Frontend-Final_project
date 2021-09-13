@@ -38,14 +38,14 @@ body{
     display: flex;
     text-align: center;
     flex-direction: column;
-    position: fixed;
-    top: 25%;
-    left: 38%;
+    justify-content: center;
+    margin: 150px;
   }
   
   .form {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 25px;
   }
   
@@ -79,10 +79,8 @@ body{
 
   .registerBtn{
     text-align: center;
-    width: 50%;
+    width: 100px;
     height: 33px;
-    position: relative;
-    left: 25%;
     background: none;
     color: black;
     border: 2px solid black;
@@ -211,5 +209,59 @@ body{
   }
   .form textarea {
     width: 280px;
+  }
+}
+
+/* footer */
+
+#footer {
+  width: 100%;
+  background: black;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  padding-bottom: 3%;
+}
+
+#footer span{
+  text-shadow: 0px 3px 15px red;
+  font-size: 33px;
+}
+
+#footer div {
+  display: flex;
+  gap: 30px;
+}
+
+#footer a {
+  color: white;
+  text-decoration: none;
+  transition: ease-in-out 0.3s;
+}
+
+#footer a:hover {
+  text-shadow: 0px 3px 15px red;
+}
+
+@media (max-width: 425px) {
+  #footer {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 360px) {
+  #footer {
+    font-size: 14px;
+  }
+  #footer div {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 346px) {
+  #footer {
+    font-size: 13px;
   }
 }

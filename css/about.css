@@ -34,13 +34,13 @@ body{
     text-shadow: 0px 10px 20px red;
 }
 
-body div {
+.aboutContent {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     border: 4px solid black;
-    margin: 11%;
+    margin: 12%;
     font-size: 17px;
     padding-left: 10%;
     padding-right: 10%;
@@ -50,7 +50,7 @@ body div {
 }
 
 @media (max-width: 870px) {
-    body div {
+    .aboutContent {
         margin: 15%;
         font-size: 15px;
         padding-left: 8%;
@@ -63,7 +63,7 @@ body div {
     .homeBtn {
       text-shadow: 3px 10px 15px white;
     }
-    body div {
+    .aboutContent {
         margin-top: 25%;
         font-size: 12px;
         padding-left: 8%;
@@ -79,7 +79,7 @@ body div {
     .homeBtn {
       text-shadow: none;
     }
-    body div {
+    .aboutContent {
         margin-top: 35%;
         font-size: 10px;
         padding-left: 8%;
@@ -92,7 +92,7 @@ body div {
     .heading {
       font-size: 30px;
     }
-    body div {
+    .aboutContent {
         margin: 10%;
         margin-top: 35%;
         font-size: 10px;
@@ -111,8 +111,62 @@ body div {
       margin: 10px;
       font-size: 23px;
     }
-    body div {
+    .aboutContent {
         margin: 5%;
         margin-top: 35%;
     }
   }
+
+  /* footer */
+
+#footer {
+  width: 100%;
+  background: black;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  padding-bottom: 3%;
+}
+
+#footer span{
+  text-shadow: 0px 3px 15px red;
+  font-size: 33px;
+}
+
+#footer div {
+  display: flex;
+  gap: 30px;
+}
+
+#footer a {
+  color: white;
+  text-decoration: none;
+  transition: ease-in-out 0.3s;
+}
+
+#footer a:hover {
+  text-shadow: 0px 3px 15px red;
+}
+
+@media (max-width: 425px) {
+  #footer {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 360px) {
+  #footer {
+    font-size: 14px;
+  }
+  #footer div {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 346px) {
+  #footer {
+    font-size: 13px;
+  }
+}

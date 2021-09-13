@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     font-size: 90%;
+    text-align: center;
     font-family:'Lobster', cursive;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(./images/wallpaper.jpg);
     background-attachment: fixed;
@@ -527,7 +528,7 @@ body{
     font-size: 20px;
     text-shadow: 0px 3px 15px black;
     color: white;
-    margin-bottom: 7%;
+    margin-bottom: 5%;
 }
 
 .collection-or-delivery form {
@@ -536,10 +537,7 @@ body{
 }
 
 .checkoutBtn {
-    margin-bottom: 20px;
-    position: fixed;
-    bottom: 0;
-    right: 40%;
+    margin-bottom: 50px;
     width: 20%;
     height: 45px;
     background: white;
@@ -640,3 +638,56 @@ body{
         font-size: 20px;
     }
 }
+/* footer */
+
+#footer {
+    width: 100%;
+    background: black;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding-bottom: 3%;
+  }
+  
+  #footer span{
+    text-shadow: 0px 3px 15px red;
+    font-size: 33px;
+  }
+  
+  #footer div {
+    display: flex;
+    gap: 30px;
+  }
+  
+  #footer a {
+    color: white;
+    text-decoration: none;
+    transition: ease-in-out 0.3s;
+  }
+  
+  #footer a:hover {
+    text-shadow: 0px 3px 15px red;
+  }
+  
+  @media (max-width: 425px) {
+    #footer {
+      font-size: 17px;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    #footer {
+      font-size: 14px;
+    }
+    #footer div {
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 346px) {
+    #footer {
+      font-size: 13px;
+    }
+  }
