@@ -37,6 +37,22 @@ body {
   background-color: white;
 }
 
+.owl-theme .owl-dots .owl-dot span {
+  width: 10px;
+  height: 10px;
+  margin: 5px 7px;
+  background: red;
+  display: block;
+  -webkit-backface-visibility: visible;
+  transition: opacity 200ms ease;
+  border-radius: 30px;
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+  background: white;
+  box-shadow: 0px 3px 15px black;
+}
+
 @media (max-width: 1000px) {
   #models-container p {
     margin: 10% 0px 0px 5%;
