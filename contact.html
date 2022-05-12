@@ -20,6 +20,10 @@
     <title>Contact</title>
   </head>
   <body>
+    <!-- Loader -->
+    <div class="loader">
+      <img src="./css/images/Double Ring-2s-210px.svg" alt="Loading...">
+    </div>
     <div class="form-container">
         <h2>Contact us</h2>
         <form class="form" action="https://formspree.io/f/mbjqqqya" method="POST">
@@ -49,5 +53,12 @@
         </div>
       </div>
     </div>
+    <script>
+      // Loader
+      window.addEventListener("load", function () {
+        const loader = this.document.querySelector(".loader");
+        loader.className += " hidden";
+      });
+    </script>
 </body>
 </html>
